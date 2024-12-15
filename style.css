@@ -402,6 +402,16 @@ body {
     border-radius: 10px;
 }
 
+.container >.development{
+    padding: 10px 10px 10px 0;
+    color: white;
+    margin-top: 10px;
+    border-top: 1px dotted blue;
+    font-size: 20px;
+    text-align: right;
+    background-color: rgb(17, 135, 214);
+}
+
 
 /* Hover effect for market items */
 .stock_market:hover,
