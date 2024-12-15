@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css"> <!-- Replace 'styles.css' with your CSS file path -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="time_newsScrolling" id="time_newsScrolling">
+            <div class="date_time" id="date_time"></div>
+            <div class="scrolling_news" id="scrolling_news">
+                <div class="scrolling_text" id="scrolling_text"></div>
+            </div>
+        </div>
+        <div class="stock_market_price_scolling" id="stock_market_price_scolling">
+            <div class="dse_container" id="dse_container">
+                <span class="indicator" id="indicator">
+                    <img src="./images/dse.png" width="50px" height="50px" alt="No Image"/>
+                    <label>DSE</label>
+                </span>
+                <span class="dse_data" id="dse_data">Data</span>
+            </div>
+            <div class="cse_container" id="cse_container">
+                <span class="indicator" id="indicator">
+                    <img src="./images/cse.png" width="50px" height="50px" alt="No Image"/>
+                    <label>CSE</label>
+                </span>
+                <span class="cse_data" id="cse_data">Data</span>
+            </div>
+        </div>
+        <div class="card_price" id="card_price">
+            <div class="stock_market" id="stock_market">
+                <div class="card">
+                    <span>
+                        <p> <img src="./images/dse.png" width="20px" height="20px" alt="not Image"/>DSE X</p>
+                    </span>
+                    <div>
+                        <p>5,200</p>
+                        <span>
+                            <p>+32</p>
+                            <p>+0.10 %</p>
+                        </span>
+                    </div>
+                    
+                    <div class="chart_div"></div>
+                </div>
+                <div class="card">
+                    <span>
+                        <p> <img src="./images/cse.png" width="20px" height="20px" alt="not Image"/>CSE </p>
+                        <p>Shariah</p>
+                    </span>
+                    <div>
+                        <p>1,205</p>
+                        <span>
+                            <p>+10</p>
+                            <p>+0.05 %</p>
+                        </span>
+                    </div>
+                    
+                    <div class="chart_div"></div>
+                </div>
+                <div class="card">
+                    <span>
+                        <p>DJIA</p>
+                        <p>usa</p>
+                    </span>
+                    <div>
+                        <p>44,500</p>
+                        <span>
+                            <p>- 240</p>
+                            <p>- 0.05%</p>
+                        </span>
+                    </div>
+                    
+                    <div class="chart_div"></div>
+                </div>
+                <div class="card">
+                    <span>
+                        <p><img src="./images/dollar-symbol.png" width="20px" height="20px" alt="not Image"/>USD</p>
+                        <p>Index</p>
+                    </span>
+                    <div>
+                        <p>106.52</p>
+                        <span>
+                            <p>+1.20</p>
+                            <p>+0.10 %</p>
+                        </span>
+                    </div>
+                    
+                    <div class="chart_div"></div>
+                </div>
+            </div>
+            <div class="mine_item_market" id="mine_item_market">
+                <div class="card">
+                    <span>
+                        <p><img src="./images/gold.png" width="20px" height="20px" alt="not Image"/>GOLD</p>
+                    </span>
+                    <div>
+                        <p>2,650</p>
+                        <span>
+                            <p>+32</p>
+                            <p>+0.10 %</p>
+                        </span>
+                    </div>
+                    
+                    <div class="chart_div"></div>
+                </div>
+                <div class="card">
+                    <span>
+                        <p><img src="./images/silver.png" width="20px" height="20px" alt="not Image"/>SILVER</p>
+                    </span>
+                    <div>
+                        <p>31.70</p>
+                        <span>
+                            <p>+32</p>
+                            <p>+0.10 %</p>
+                        </span>
+                    </div>
+                    
+                    <div class="chart_div"></div>
+                </div>
+                <div class="card">
+                    <span>
+                        <p><img src="./images/crude.png" width="20px" height="20px" alt="not Image"/>Crude Oil</p>
+                    </span>
+                    <div>
+                        <p></p>
+                        <span>
+                            <p></p>
+                            <p></p>
+                        </span>
+                    </div>
+                    
+                    <div class="chart_div"></div>
+                </div>
+                <div class="card">
+                    <span>
+                        <p><img src="./images/palm-oil.png" width="20px" height="20px" alt="not Image"/>Palm Oil</p>
+                        
+                    </span>
+                    <div>
+                        <p></p>
+                        <span>
+                            <p></p>
+                            <p></p>
+                        </span>
+                    </div>
+                   
+                    <div class="chart_div"></div>
+                </div>
+            </div>
+            <div class="bit_coin_market" id="bit_coin_market">
+                <div class="card">
+                    <span>
+                        <p><img src="./images/bit.png" width="20px" height="20px" alt="not Image"/>BTC</p>
+                        <p> Bitcoin</p>
+                    </span>
+                    <div>
+                        <p>97,500</p>
+                        <span>
+                            <p>+270</p>
+                            <p>+0.25 %</p>
+                        </span>
+                    </div>
+                    
+                    <div class="chart_div"></div>
+                </div>
+                <div class="card">
+                    <span>
+                        
+                        <p><img src="./images/etherium.png" width="20px" height="20px" alt="not Image"/>ETH</p>
+                        <p>Etherium</p>
+                    </span>
+                    <div>
+                        <p>3,750</p>
+                        <span>
+                            <p>+270</p>
+                            <p>+0.25 %</p>
+                        </span>
+                    </div>
+                    
+                    <div class="chart_div"></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script> <!-- Replace 'script.js' with your JS file path -->
+    <script src="supporting_script.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script> -->
+
+   
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</body>
+</html>

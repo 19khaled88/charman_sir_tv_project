@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #004085;
+            color: #fff;
+        }
+
+        .header .date-time {
+            font-size: 16px;
+        }
+
+        .news-ticker {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            padding: 10px 20px;
+            font-size: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .news-ticker marquee {
+            font-weight: bold;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card .title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card .value {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .card .change {
+            font-size: 16px;
+            color: #28a745;
+        }
+
+        .card .negative {
+            color: #dc3545;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f8f9fa;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="date-time">Tuesday, 10 December 2024 | 2:51 PM</div>
+    <div class="news-title">Newspaper News Scrolling</div>
+</div>
+
+<div class="news-ticker">
+    <marquee>Stock Price Scrolling | Stock Price Scrolling</marquee>
+</div>
+
+<div class="content">
+    <div class="card">
+        <div class="title">DSEX</div>
+        <div class="value">5,200</div>
+        <div class="change">+32 (+0.10%)</div>
+    </div>
+    <div class="card">
+        <div class="title">CSE Sharish</div>
+        <div class="value">1,205</div>
+        <div class="change">+10 (+0.05%)</div>
+    </div>
+    <div class="card">
+        <div class="title">DJIA USA</div>
+        <div class="value">44,500</div>
+        <div class="change negative">-240 (-0.50%)</div>
+    </div>
+    <div class="card">
+        <div class="title">USD Index</div>
+        <div class="value">106.52</div>
+        <div class="change">+1.20 (+0.10%)</div>
+    </div>
+    <div class="card">
+        <div class="title">Gold</div>
+        <div class="value">2,650</div>
+    </div>
+    <div class="card">
+        <div class="title">Silver</div>
+        <div class="value">31.70</div>
+    </div>
+    <div class="card">
+        <div class="title">Crude Oil</div>
+        <div class="value">-</div>
+    </div>
+    <div class="card">
+        <div class="title">Palm Oil</div>
+        <div class="value">-</div>
+    </div>
+    <div class="card">
+        <div class="title">BTC Bitcoin</div>
+        <div class="value">97,500</div>
+        <div class="change">+270 (+0.25%)</div>
+    </div>
+    <div class="card">
+        <div class="title">ETH Ethereum</div>
+        <div class="value">3,750</div>
+    </div>
+</div>
+
+<div class="footer">Developed by: CityShip Software</div>
+
+</body>
+</html>

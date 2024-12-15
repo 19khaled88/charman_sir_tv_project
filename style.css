@@ -1,0 +1,417 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and font for the body */
+body {
+    /* background-color: #f4f4f4; */
+    font-family: Arial, sans-serif;
+}
+
+/* Style the container */
+.container {
+    margin: auto;
+    
+    width: 99vw;
+    height: 100vh;
+}
+
+/* Style for scrolling news section */
+.container > .time_newsScrolling {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 99vw;
+    border-bottom: 1px dotted rgb(17, 135, 214) ;
+
+    background-color: rgb(0 112 255 / 58%);
+}
+.container > .time_newsScrolling > .date_time {
+    /* width: 30%; */
+    margin-right: 10px;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+}
+.container > .time_newsScrolling > .date_time > .day_year{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    font-size: 18px;
+
+}
+.container > .time_newsScrolling > .date_time > .day_year > span{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 0;
+    margin: 0;
+
+    height: 90%;
+    flex: 1;
+    /* width: 90%; */
+}
+.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(1){border-radius: 50px 0 0 50px;}
+.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(2){border-radius: 0 50px 50px 0;}
+.container > .time_newsScrolling > .date_time > .day_year > span > p:nth-child(2){
+    padding: 0 15px;
+    /* border-radius: 10px 0 0 10px; */
+    
+}
+.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(1) > p:nth-child(1){
+    padding: 0 15px;
+}
+.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(1) > p:nth-child(2){
+    border-radius: 20px 0 0 20px;
+    height: 90%;
+    padding: 0 5px 0 15px;
+}
+.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(2) > p:nth-child(1){
+    border-radius: 0 20px 20px 0;
+    height: 90%;
+    padding: 0 15px 0 5px;
+}
+.container > .time_newsScrolling > .date_time > .day_year > span > p{
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* width: 90%; */
+}
+.container > .time_newsScrolling > .date_time > .day_year > span > p:first-child{
+    /* margin-right: 5px; */
+    padding-left: 10px;
+}
+.container > .time_newsScrolling > .date_time > .time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    
+}
+.container > .time_newsScrolling > .date_time > .time > span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-color: blue;
+    border-radius: 20px  0 0 20px;
+    padding-left: 5px;
+    height: 85%;
+}
+.container > .time_newsScrolling > .date_time > .time > span > p {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+.container > .time_newsScrolling > .date_time > .time > span > p:nth-child(1),
+.container > .time_newsScrolling > .date_time > .time > span > p:nth-child(3)
+{
+    padding: 0 8px 0 8px;
+}
+.container > .time_newsScrolling > .date_time > .time > p {
+    /* padding: 5px; */
+    background-color: #fb00ff;
+    border-radius: 0 20px 20px 0;
+    padding: 0 15px 0 10px;
+    height: 85%;
+    font-size: 18px;
+    display: flex;
+    color: white;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > .time_newsScrolling  > .scrolling_news {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    
+    
+    
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* padding: 10px 0; */
+
+    border: none;
+    outline: none;
+    
+}
+.container > .time_newsScrolling  > .scrolling_news > .scrolling_text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+}
+
+.container > .time_newsScrolling  > .scrolling_news > .scrolling_text > .headline_item {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.container > .time_newsScrolling  > .scrolling_news > .scrolling_text > .headline_item > p{
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.container > .time_newsScrolling  > .scrolling_news > .scrolling_text > .headline_item > span {
+    
+}
+
+
+
+
+/* Style for stock market price section */
+.stock_market_price_scolling {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0 170 255 / 54%);
+    margin-top: 5px;
+}
+.stock_market_price_scolling > .dse_container ,
+.stock_market_price_scolling > .cse_container  {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0;
+    
+  
+}
+.stock_market_price_scolling > .dse_container {
+    border-bottom: dotted red;
+}
+.stock_market_price_scolling > .dse_container > label,
+.stock_market_price_scolling > .cse_container > label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.stock_market_price_scolling > .dse_container > .indicator ,
+.stock_market_price_scolling > .cse_container > .indicator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.stock_market_price_scolling > .dse_container > .indicator > img,
+.stock_market_price_scolling > .cse_container > .indicator > img {
+    margin-bottom: 5px;
+}
+.stock_market_price_scolling > .dse_container > span:nth-child(2) ,
+.stock_market_price_scolling > .cse_container > span:nth-child(2) { 
+    flex: 1;
+}
+
+.stock_market_price_scolling > .dse_container > .dse_data,
+.stock_market_price_scolling > .cse_container > .cse_data
+{
+    display: flex;
+    flex-direction: row;
+
+
+    overflow: hidden;
+    position: relative;
+
+    
+}
+.stock_market_price_scolling > .dse_container > .dse_data > div,
+.stock_market_price_scolling > .cse_container > .cse_data > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 5px 10px;
+    
+    position: absolute;
+   
+    height: 90%;
+    
+    border-radius: 10px;
+    margin-right: 5px;
+
+
+    
+}
+.stock_market_price_scolling > .dse_container > .dse_data > div > span:nth-child(2) > p:nth-child(1),
+.stock_market_price_scolling > .cse_container > .cse_data > div > span:nth-child(2) > p:nth-child(1){
+    width: 50px;
+}
+.stock_market_price_scolling > .dse_container > .dse_data > div > span:nth-child(2),
+.stock_market_price_scolling > .cse_container > .cse_data > div > span:nth-child(2){
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 20px;
+   
+}
+.stock_market_price_scolling > .dse_container > .dse_data > div > span,
+.stock_market_price_scolling > .cse_container > .cse_data > div > span {
+    display: flex;
+    flex-direction: row; 
+    width: 150px;
+}
+.stock_market_price_scolling > .dse_container > .dse_data > div > span:first-child,
+.stock_market_price_scolling > .cse_container > .cse_data > div > span:first-child{
+    justify-content: space-between;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.stock_market_price_scolling > .dse_container > .dse_data > div > span:nth-child(2) > p:nth-child(2),
+.stock_market_price_scolling > .cse_container > .cse_data > div > span:nth-child(2) > p:nth-child(2){ 
+    color: white;
+}
+.stock_market_price_scolling > .dse_container > .dse_data > div > span:nth-child(2) > p:nth-child(1),
+.stock_market_price_scolling > .cse_container > .cse_data > div > span:nth-child(2) > p:nth-child(1){ 
+    max-width: fit-content;
+    margin-right: 5px;
+}
+
+
+
+/* Card price section styling */
+.card_price {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+   padding-top: 10px;
+   background-color: rgb(0 159 255 / 11%);
+   margin-top: 5px;
+
+  
+}
+
+/* Individual market item styling */
+.stock_market, .mine_item_market, .bit_coin_market {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 5px 20px;
+}
+
+.stock_market > .card > span:nth-child(1) {
+    /* background-color: #fb00ff; */
+} 
+.mine_item_market{
+   
+}
+.bit_coin_market{
+    /* background-color: blueviolet; */
+}
+
+.stock_market > .card, .mine_item_market > .card , .bit_coin_market > .card {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 15px 15px;
+    border-radius: 0 0 10px 10px;
+}
+
+.stock_market > .card > span, 
+.mine_item_market > .card > span , 
+.bit_coin_market > .card > span {
+  
+}
+
+.stock_market > .card > span:nth-child(1), 
+.mine_item_market > .card > span:nth-child(1), 
+.bit_coin_market > .card > span:nth-child(1){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #008E97;
+    flex: 1;
+    width: 100%;
+    font-size: 20px;
+    border-bottom: 1px dotted blue;
+    padding: 5px;
+    color: white;
+}
+.stock_market > .card > span:nth-child(1) > p, 
+.mine_item_market > .card > span:nth-child(1) > p, 
+.bit_coin_market > .card > span:nth-child(1) > p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.stock_market > .card > div, 
+.mine_item_market > .card > div, 
+.bit_coin_market > .card > div{ 
+    padding: 5px 0;
+}
+
+.stock_market > .card > div, 
+.mine_item_market > .card > div, 
+.bit_coin_market > .card > div{  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.stock_market > .card > div > p, 
+.mine_item_market > .card > div > p, 
+.bit_coin_market > .card > div > p{  
+    font-size: 20px;
+}
+
+.stock_market > .card > div > span > p,  
+.mine_item_market > .card > div > span > p,  
+.bit_coin_market > .card > div > span > p{   
+    padding: 2px 0;
+}
+
+.stock_market > .card > div:nth-child(3)>div>div>div>svg, 
+.mine_item_market > .card > div:nth-child(3)>div>div>div>svg, 
+.bit_coin_market > .card > div:nth-child(3)>div>div>div>svg{
+    border-radius: 10px;
+}
+
+
+/* Hover effect for market items */
+.stock_market:hover,
+.mine_item_market:hover,
+.bit_coin_market:hover {
+    
+}
+
+
+
+
+
+
