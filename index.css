@@ -1,0 +1,63 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and font for the body */
+body {
+    /* background-color: #f4f4f4; */
+    font-family: Arial, sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: column; 
+    height: 100vh;
+}
+.container > .nested{
+    flex-grow: var(--height-ratio); 
+    background-color: lightblue;
+    /* display: flex; 
+    justify-content: center;
+    align-items: center; */
+    border: 1px solid #000;
+}
+.container > .time_newsScrolling{
+    display: flex;
+    flex-direction: row;
+}
+.container > .time_newsScrolling >.date_time{
+    flex-grow: 1;
+
+
+    display: flex;
+    flex-direction: column;
+}
+.container > .time_newsScrolling >.date_time > .day_year {
+    display: flex;
+    flex-direction: row;
+}
+.container > .time_newsScrolling >.date_time > .day_year > span{
+    display: flex;
+    flex-direction: row;
+}
+.container > .time_newsScrolling >.date_time >.time{
+    display: flex;
+    flex-direction: row;
+}
+.container > .time_newsScrolling >.date_time >.time > span {
+    display: flex;
+    flex-direction: row;
+}
+.container > .time_newsScrolling >.scrolling_news{
+    flex-grow: 3;
+}
+.container > .time_newsScrolling > .scrolling_news > .scrolling_text{
+    display: flex;
+    flex-direction: row;
+}
+.container > .time_newsScrolling > .scrolling_news > .scrolling_text > .headline_item{
+    display: flex;
+    flex-direction: row;
+}
+

@@ -1,6 +1,4 @@
 
-
-
 function getFormattedDateTime() {
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const months = [
@@ -158,11 +156,9 @@ function scrollItems (){
 
         categoryTitle.style.backgroundColor = randomColor.darker;
 
-        headlineContainer.style.borderRadius = '30px 20px';
        
-        categoryTitle.style.borderRadius = '30px 20px';
-        categoryTitle.style.padding = '20px 20px'
-        headlineText.style.borderRadius = '10px'
+        categoryTitle.style.padding = '20px 10px'
+       
         headlineText.style.paddingRight = '20px'
     
         // Append the category and headline text to the container
@@ -184,8 +180,11 @@ function scrollItems (){
         }
     })
 
-    document.getElementById('time_newsScrolling').style.height = `${time_news_scroll_height + 20}px`
-    document.getElementById('scrolling_news').style.height = `${time_news_scroll_height}px`
+    document.getElementById('time_newsScrolling').style.height = `${time_news_scroll_height + 20}px`;
+
+    document.getElementById('scrolling_news').style.height = `${time_news_scroll_height + 20}px`;
+
+    document.getElementById('news_text_label').style.height = `${time_news_scroll_height + 20}px`;
 
     document.querySelectorAll('.stock_market_price_scolling').forEach((element)=>{
         const divElements = element.querySelectorAll('div');
@@ -203,84 +202,90 @@ function scrollItems (){
 
 function colorize(){
     colorPalatte =[ 
-        {
-            darker:'#c18ff0',
-            lighter:'#cda5f3',
-            color:'',
+        // {
+        //     darker:'#c18ff0',
+        //     lighter:'#cda5f3',
+        //     color:'',
 
-        },
-        {
-            darker:'#caaa1c',
-            lighter:'#f0de8f',
-            color:'',
+        // },
+        // {
+        //     darker:'#caaa1c',
+        //     lighter:'#f0de8f',
+        //     color:'',
 
-        },
-        {
-            darker:'#e78c4b',
-            lighter:'#f0b78f',
-            color:'',
+        // },
+        // {
+        //     darker:'#e78c4b',
+        //     lighter:'#f0b78f',
+        //     color:'',
 
-        },
-        {
-            darker:'#fc7127',
-            lighter:'#fdad81',
-            color:'',
+        // },
+        // {
+        //     darker:'#fc7127',
+        //     lighter:'#fdad81',
+        //     color:'',
 
-        },
-        {
-            darker:'#078d97',
-            lighter:'#6deff8',
-            color:'',
+        // },
+        // {
+        //     darker:'#078d97',
+        //     lighter:'#6deff8',
+        //     color:'',
 
-        },
-        {
-            darker:'#8800cc',
-            lighter:'#e6b3ff',
-            color:'',
+        // },
+        // {
+        //     darker:'#8800cc',
+        //     lighter:'#e6b3ff',
+        //     color:'',
 
-        },
-        {
-            darker:'#ff00ff',
-            lighter:'#ff99ff',
-            color:'',
+        // },
+        // {
+        //     darker:'#ff00ff',
+        //     lighter:'#ff99ff',
+        //     color:'',
 
-        },
-        {
-            darker:'#b2b300',
-            lighter:'#ffff99',
-            color:'',
+        // },
+        // {
+        //     darker:'#b2b300',
+        //     lighter:'#ffff99',
+        //     color:'',
 
-        },
-        {
-            darker:'#e60067',
-            lighter:'#ff80b9',
-            color:'',
+        // },
+        // {
+        //     darker:'#e60067',
+        //     lighter:'#ff80b9',
+        //     color:'',
 
-        },
-        {
-            darker:'#ff80b9',
-            lighter:'#8eedf0',
-            color:'',
+        // },
+        // {
+        //     darker:'#ff80b9',
+        //     lighter:'#8eedf0',
+        //     color:'',
 
-        },
-        {
-            darker:'#519cc8',
-            lighter:'#b1d3e7',
-            color:'',
+        // },
+        // {
+        //     darker:'#519cc8',
+        //     lighter:'#b1d3e7',
+        //     color:'',
 
-        },
-        {
-            darker:'#03adfc',
-            lighter:'#81d6fe',
-            color:'',
+        // },
+        // {
+        //     darker:'#03adfc',
+        //     lighter:'#81d6fe',
+        //     color:'',
 
-        },
-        {
-            darker:'#81d6fe',
-            lighter:'#fcd4cf',
-            color:'',
+        // },
+        // {
+        //     darker:'#81d6fe',
+        //     lighter:'#fcd4cf',
+        //     color:'',
 
-        },
+        // },
+
+        {
+            darker:'#C0C0C0',
+            lighter:'',
+            color:''
+        }
     ]
 
     // Generate a random index to select a color from the palette
@@ -389,15 +394,28 @@ function stockMarketManagement(){
                 div.setAttribute('class','gradient-border')
                 div.style.backgroundColor = backgroundColor;
                 div.style.backgroundImage = backgroundImage;
+
+
+                // div.innerHTML = `
+                //     <span>
+                //         <p>${companyName}</p>
+                //         <p>${currentValue}</p>
+                //     </span>
+                //     <span style="color:${color}; backgroundColor:${backgroundColor};">
+                //         <p class="material-icons material-symbols-outlined">${statusIcon}</p>
+                //         <p>${percentage}${'%'}(${upDownValue})</p>
+                //     <span>
+                // `
+
                 div.innerHTML = `
                     <span>
                         <p>${companyName}</p>
                         <p>${currentValue}</p>
                     </span>
                     <span style="color:${color}; backgroundColor:${backgroundColor};">
-                    <p class="material-icons material-symbols-outlined">${statusIcon}</p>
-                        <p>${percentage}${'%'}(${upDownValue})</p>
-                    <span>
+                        <p>${percentage}${'%'}</p>
+                        <p>${upDownValue}</p>
+                    </span>
                 `
                 dse_data.appendChild(div)
                 
@@ -411,6 +429,7 @@ function stockMarketManagement(){
 
                 const percentage=((market.value /(currentValue - (market.value))) * 100).toFixed(2);
                 
+                console.log(percentage)
                 let statusIcon;
                 let color;
                 let backgroundColor;
@@ -446,15 +465,17 @@ function stockMarketManagement(){
                 div.setAttribute('class','gradient-border')
                 div.style.backgroundColor = backgroundColor;
                 div.style.backgroundImage = backgroundImage;
+               
+
                 div.innerHTML = `
-                    <span>
-                        <p>${companyName}</p>
-                        <p>${currentValue}</p>
-                    </span>
-                    <span style="color:${color}; backgroundColor:${backgroundColor};">
-                        <p class="material-icons material-symbols-outlined">${statusIcon}</p>
-                        <p>${percentage}${'%'}(${upDownValue})</p>
-                    <span>
+                <span>
+                    <p>${companyName}</p>
+                    <p>${currentValue}</p>
+                </span>
+                <span style="color:${color}; backgroundColor:${backgroundColor};">
+                    <p>${percentage > 0 ? `+${percentage}${'%'}` : percentage < 0 ? `${percentage}${'%'}` : `${percentage}${'%'}`}</p>
+                    <p>${upDownValue > 0 ? `+${upDownValue}` : upDownValue < 0 ? `${upDownValue}` : upDownValue}</p>
+                </span>
                 `
                 cse_data.appendChild(div)
                 
@@ -466,129 +487,130 @@ function stockMarketManagement(){
     scrolling(2,'cse_data');
 }
 
-
 const stockMakrketData =[
     {
-        dse:[
-            {
-                company:'abc',
-                current:150,
-                value:+10,
-            },
-            {
-                company:'bcd',
-                current:110,
-                value:0,
-            },
-            {
-                company:'cde',
-                current:120,
-                value:-5,
-            },
-            {
-                company:'def',
-                current:100,
-                value:-2,
-            },
-            {
-                company:'efg',
-                current:90,
-                value:-8,
-            },
-            {
-                company:'fgh',
-                current:90,
-                value:+5,
-            },
-            {
-                company:'ghi',
-                current:55,
-                value:+8,
-            },
-            {
-                company:'hij',
-                current:63,
-                value:+5,
-            },
-            {
-                company:'ijk',
-                current:55,
-                value:-1,
-            },
-            {
-                company:'jkl',
-                current:41,
-                value:+3,
-            },
-            {
-                company:'klm',
-                current:92,
-                value:-6,
-            },
-
+        "dse": [
+          {
+            "company": "Square Pharma",
+            "current": 150,
+            "value": +10
+          },
+          {
+            "company": "GP",
+            "current": 110,
+            "value": 0
+          },
+          {
+            "company": "ACI",
+            "current": 120,
+            "value": -5
+          },
+          {
+            "company": "Beximco Pharma",
+            "current": 100,
+            "value": -2
+          },
+          {
+            "company": "BRAC Bank",
+            "current": 90,
+            "value": -8
+          },
+          {
+            "company": "Lafarge Holcim",
+            "current": 90,
+            "value": +5
+          },
+          {
+            "company": "Renata",
+            "current": 55,
+            "value": +8
+          },
+          {
+            "company": "Bri Amer Tobacco",
+            "current": 63,
+            "value": +5
+          },
+          {
+            "company": "Summit Power",
+            "current": 55,
+            "value": -1
+          },
+          {
+            "company": "BSRM",
+            "current": 41,
+            "value": +3
+          },
+          {
+            "company": "Singer Bangladesh",
+            "current": 92,
+            "value": -6
+          }
         ],
-        cse:[
-            {
-                company:'abc',
-                current:70,
-                value:-10,
-            },
-            {
-                company:'bcd',
-                current:55,
-                value:+1,
-            },
-            {
-                company:'cde',
-                current:500,
-                value:-5,
-            },
-            {
-                company:'def',
-                current:200,
-                value:0,
-            },
-            {
-                company:'efg',
-                current:70,
-                value:+8,
-            },
-            {
-                company:'fgh',
-                current:90,
-                value:-5,
-            },
-            {
-                company:'ghi',
-                current:45,
-                value:0,
-            },
-            {
-                company:'hij',
-                current:63,
-                value:-5,
-            },
-            {
-                company:'ijk',
-                current:25,
-                value:+1,
-            },
-            {
-                company:'jkl',
-                current:41,
-                value:0,
-            },
-            {
-                company:'klm',
-                current:52,
-                value:+6,
-            },
-
+        "cse": [
+         
+          {
+            "company": "GP",
+            "current": 55,
+            "value": +1
+          },
+          {
+            "company": "Renata",
+            "current": 45,
+            "value": 0
+          },
+          {
+            "company": "Square Pharma",
+            "current": 70,
+            "value": -10
+          },
+          {
+            "company": "ACI",
+            "current": 500,
+            "value": -5
+          },
+          {
+            "company": "Beximco Pharma",
+            "current": 200,
+            "value": 0
+          },
+          {
+            "company": "BSRM",
+            "current": 41,
+            "value": 0
+          },
+          {
+            "company": "Singer Bangladesh",
+            "current": 92,
+            "value": -6
+          },
+          {
+            "company": "BRAC Bank",
+            "current": 70,
+            "value": +8
+          },
+          {
+            "company": "Summit Power",
+            "current": 25,
+            "value": +1
+          },
+          {
+            "company": "Lafarge Holcim",
+            "current": 90,
+            "value": -5
+          },
+          
+          {
+            "company": "Bri Amer Tobacco",
+            "current": 63,
+            "value": -5
+          },
+          
+          
+          
         ]
-    }
+      }
+      
 ]
-
-
 
 function manageCardInfo(){
     const canvases = document.querySelectorAll('.lineChart');
@@ -664,33 +686,61 @@ async function fetchStockData() {
     return { labels, prices };
 }
 
-function scrolling(speedValue,scrollElement){
-    const off = 10;
-    let l = off;
+function scrolling(speedValue, scrollElement) {
+    const off = 10; // Space between elements
+    let l = 0; // Start position for the first element
     const marqueeElements = Array.from(document.querySelectorAll(`.${scrollElement} div`));
     const speed = speedValue;
     const stack = [];
     let pause = false;
 
+    const marqueeContainer = document.querySelector(`.${scrollElement}`);
+    const containerWidth = marqueeContainer.offsetWidth; // Width of the scrolling container
+    let totalWidth = 0; // Total width of all scrolling elements
+
+    
     marqueeElements.forEach(element => {
         const width = element.offsetWidth + off;
         element.style.left = `${l}px`;
         l += width;
+        totalWidth += width; // Calculate total width of all elements
         stack.push(element);
     });
 
+    // Ensure enough elements to fill the container
+    while (totalWidth < containerWidth) {
+        // marqueeElements.forEach(element => {
+        //     const clone = element.cloneNode(true); // Clone the element
+        //     const width = clone.offsetWidth + off;
+        //     clone.style.left = `${l}px`;
+        //     l += width;
+        //     totalWidth += width;
+        //     marqueeContainer.appendChild(clone); // Append clone to container
+        //     stack.push(clone);
+        // });
+
+        for (let i = 0; i < marqueeElements.length && totalWidth < containerWidth; i++) {
+            const clone = marqueeElements[i].cloneNode(true); // Clone the element
+            const width = clone.offsetWidth + off;
+            clone.style.left = `${l}px`;
+            l += width;
+            totalWidth += width;
+            marqueeContainer.appendChild(clone); // Append clone to container
+            stack.push(clone);
+        }
+    }
+
     function moveMarquee() {
         if (!pause) {
-            marqueeElements.forEach(element => {
+            stack.forEach(element => {
                 const currentLeft = parseFloat(getComputedStyle(element).left);
                 const newLeft = currentLeft - speed;
                 element.style.left = `${newLeft}px`;
 
-                if (newLeft + element.offsetWidth < -130) {
-                    const firstElement = stack.shift();
+                if (newLeft + element.offsetWidth < 0) {
                     const lastElement = stack[stack.length - 1];
                     element.style.left = `${parseFloat(getComputedStyle(lastElement).left) + lastElement.offsetWidth + off}px`;
-                    stack.push(element);
+                    stack.push(stack.shift()); // Move the first element to the end of the stack
                 }
             });
         }
@@ -699,7 +749,7 @@ function scrolling(speedValue,scrollElement){
 
     requestAnimationFrame(moveMarquee);
 
-    const marqueeContainer = document.querySelector(`.${scrollElement}`);
+    // Pause scrolling on hover
     marqueeContainer.addEventListener('mouseover', () => {
         pause = true;
     });
@@ -707,6 +757,7 @@ function scrolling(speedValue,scrollElement){
         pause = false;
     });
 }
+
 
 // function drawCurveTypes() {
 //     var data = new google.visualization.DataTable();

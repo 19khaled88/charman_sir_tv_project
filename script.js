@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     updateDateTime();
-    setInterval(updateDateTime,6000);
+    // setInterval(updateDateTime,6000);
 
     scrollItems();
 
@@ -43,6 +43,24 @@ document.addEventListener("DOMContentLoaded", () => {
         ]);
     
         var options = {
+            hAxis:{
+              gridlines:{color:'none'},
+              baselineColor:'none',
+
+              textPosition:'none',
+            
+            },
+            vAxis:{
+                gridlines:{color:'none'},
+                baselineColor:'none',
+
+                textPosition:'none'
+            },
+            legend:{position:'none'},
+            chartArea:{
+                width:'100%',
+                height:'100%',
+            },
             // hAxis: {
             //     title: 'Time' // Title for X-axis
             // },
@@ -53,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 // No need for curveType since we only have one series
                 // If you want a smooth line you can keep this option
                 // curveType: 'function'
+                0:{curveType:'function'}
+                
             }
         };
     
