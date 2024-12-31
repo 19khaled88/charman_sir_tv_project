@@ -666,6 +666,8 @@ function manageCardInfo(){
 
 }
 
+
+
 async function fetchStockData() {
     // const response = await fetch('https://api.example.com/stock-data?symbol=YOUR_STOCK_SYMBOL&interval=daily'); // Replace with actual API URL
 
