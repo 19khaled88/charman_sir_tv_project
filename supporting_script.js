@@ -429,7 +429,7 @@ function stockMarketManagement(){
 
                 const percentage=((market.value /(currentValue - (market.value))) * 100).toFixed(2);
                 
-                console.log(percentage)
+                
                 let statusIcon;
                 let color;
                 let backgroundColor;
