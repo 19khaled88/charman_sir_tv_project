@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     updateDateTime();
-    // setInterval(updateDateTime,6000);
+    setInterval(updateDateTime,6000);
 
     scrollItems();
 
