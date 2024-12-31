@@ -1,4 +1,7 @@
 /* Reset some default browser styles */
+html, body {
+    height: 100%;
+}
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
@@ -13,13 +16,17 @@ body {
 /* Style the container */
 .container {
     margin: auto;
-
     display: flex;
     flex-direction: column;
-    
     width: 99vw;
     height: 100vh;
 }
+.container > div {
+    box-sizing: border-box;
+}
+/* Style the container */
+
+
 
 /* Style for scrolling news section */
 .container > .time_newsScrolling {
@@ -27,13 +34,12 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* height: auto; */
     width: 99vw;
     border-bottom: 1px dotted rgb(17, 135, 214) ;
 
-    /* background-color: rgb(0 112 255 / 58%); */
-}
 
+    height: 80px !important;
+}
 .container > .time_newsScrolling > .date_time {
     /* width: 30%; */
     margin-right: 10px;
@@ -150,7 +156,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .container > .time_newsScrolling  > .scrolling_news {
     overflow: hidden;
     white-space: nowrap;
@@ -187,7 +192,6 @@ body {
     position: absolute;
     z-index: 9;
 }
-
 .container > .time_newsScrolling  > .scrolling_news > .scrolling_text > .headline_item {
     position: absolute;
     display: flex;
@@ -212,7 +216,7 @@ body {
     /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
     
 }
-
+/* Style for scrolling news section */
 
 
 
@@ -220,12 +224,12 @@ body {
 .stock_market_price_scolling {
     display: flex;
     flex-direction: column;
-    /* background-color: rgb(0 170 255 / 54%); */
     margin-top: 5px;
-
     justify-content: center;
     align-items: center;
     gap: 5px;
+
+    height: 170px !important;
     
 }
 .stock_market_price_scolling > .dse_container ,
@@ -281,7 +285,6 @@ body {
 .stock_market_price_scolling > .cse_container > span:nth-child(2) { 
     flex: 1;
 }
-
 .stock_market_price_scolling > .dse_container > .dse_data,
 .stock_market_price_scolling > .cse_container > .cse_data
 {
@@ -368,6 +371,8 @@ body {
     margin-right: 5px;
     
 }
+/* Style for stock market price section */
+
 
 
 
@@ -377,13 +382,10 @@ body {
    flex-direction: column;
    gap: 5px;
    padding-top: 10px;
-   
    margin-top: 5px;
 
-  
+   flex: 1 !important;
 }
-
-/* Individual market item styling */
 .card_price >.stock_market, 
 .card_price >.mine_item_market, 
 .card_price >.bit_coin_market {
@@ -393,7 +395,6 @@ body {
 
     padding: 5px 20px;
 }
-
 .stock_market > .card > span:nth-child(1) {
     /* background-color: #fb00ff; */
 } 
@@ -403,7 +404,6 @@ body {
 .bit_coin_market{
     /* background-color: blueviolet; */
 }
-
 .card_price > .stock_market > .card,
 .card_price > .mine_item_market > .card , 
 .card_price > .bit_coin_market > .card {
@@ -417,11 +417,10 @@ body {
     
     
 }
-
 .card_price > .stock_market > .card > .chart_div,
 .card_price > .mine_item_market > .card > .chart_div , 
 .card_price > .bit_coin_market > .card > .chart_div {
-    height: 70px;
+    height: 50px;
     
 }
 .card_price > .stock_market > .card > .chart_div > div > div > div > svg,
@@ -429,13 +428,11 @@ body {
 .card_price > .bit_coin_market > .card > .chart_div > div > div > div > svg {
     height: 100px;
 }
-
 .card_price > .stock_market > .card > span, 
 .card_price > .mine_item_market > .card > span , 
 .card_price > .bit_coin_market > .card > span {
     width: 100%;
 }
-
 .card_price > .stock_market > .card > span:nth-child(1), 
 .card_price > .mine_item_market > .card > span:nth-child(1), 
 .card_price > .bit_coin_market > .card > span:nth-child(1){
@@ -444,8 +441,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color:  rgb(114, 114, 114);
-    flex: 1;
-    /* width: 100%; */
+    /* flex: 1; */
+   
     font-size: 20px;
     border-bottom: 1px dotted blue;
     padding: 5px;
@@ -481,7 +478,6 @@ body {
 
 
 }
-
 .stock_market > .card > div, 
 .mine_item_market > .card > div, 
 .bit_coin_market > .card > div{ 
@@ -491,14 +487,14 @@ body {
     justify-content: space-between;
     width: 100%;
 }
-
 .stock_market > .card > div:nth-child(2), 
 .mine_item_market > .card > div:nth-child(2), 
 .bit_coin_market > .card > div:nth-child(2){  
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 120px;
+    /* height: 120px; */
+    flex: 1;
     
 }
 .stock_market > .card > div:nth-child(2) > p:nth-child(1), 
@@ -506,25 +502,25 @@ body {
 .bit_coin_market > .card > div:nth-child(2) > p:nth-child(1){ 
     font-size: 50px;
 }
-
 .stock_market > .card > div > p, 
 .mine_item_market > .card > div > p, 
 .bit_coin_market > .card > div > p{  
     font-size: 20px;
 }
-
 .stock_market > .card > div > span > p,  
 .mine_item_market > .card > div > span > p,  
 .bit_coin_market > .card > div > span > p{   
     padding: 2px 0;
 }
-
 .stock_market > .card > div:nth-child(3)>div>div>div>svg, 
 .mine_item_market > .card > div:nth-child(3)>div>div>div>svg, 
 .bit_coin_market > .card > div:nth-child(3)>div>div>div>svg{
     border-radius: 10px;
 }
+/* Card price section styling */
 
+
+/*development section styling*/
 .container >.development{
     padding: 10px 10px 10px 0;
     color: white;
@@ -533,16 +529,26 @@ body {
     font-size: 20px;
     text-align: right;
     background-color: rgb(17, 135, 214);
+
+
+    height: 100px !important;
+}
+.container >.development > span {
+    height: 100% !important;
 }
 .container >.development > span > p {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    height: 100% !important;
 }
 .container >.development > span > p > img {
     padding: 0 5px;
+    height: 100% !important;
 }
+/*development section styling*/
+
 
 
 /* Hover effect for market items */
