@@ -125,7 +125,7 @@ body {
 
     font-family: "Roboto Mono", serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
     text-transform: uppercase;
 
@@ -174,12 +174,16 @@ body {
 {
     padding: 0 2px 0 2px;
 }
+.container > .time_newsScrolling > .date_time > .time > span > p:nth-child(2){
+    width: 10px;
+    font-weight: 400;
+}
 .container > .time_newsScrolling > .date_time > .time > p {
     /* padding: 5px; */
     /* background-color: #fb00ff; */
     border-radius: 0 20px 20px 0;
     padding: 0 5px 0 5px;
-    height: 85%;
+    height: 75%;
     font-size: 40px !important;
     display: flex;
     color: white;
