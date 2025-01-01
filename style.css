@@ -38,7 +38,7 @@ body {
     border-bottom: 1px dotted rgb(17, 135, 214) ;
 
 
-    height: 80px !important;
+    height: 100px !important;
 }
 .container > .time_newsScrolling > .date_time {
     /* width: 30%; */
@@ -209,6 +209,8 @@ body {
 
     border: none;
     outline: none;
+
+    height: 100px !important;
     
 }
 .container > .time_newsScrolling  > .scrolling_news > .news_text_label {
@@ -223,6 +225,8 @@ body {
     font-size: 18px;
     font-weight: bold;
     z-index: 999;
+
+    height: 100px !important;
 }
 .container > .time_newsScrolling  > .scrolling_news > .scrolling_text {
     display: flex;
@@ -592,12 +596,35 @@ body {
 
 
 
-/* Hover effect for market items */
-.stock_market:hover,
-.mine_item_market:hover,
-.bit_coin_market:hover {
+
+/* clock section styling */
+.container > .time_newsScrolling > .date_time > .clock_section{
+    height: 65px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.container > .time_newsScrolling > .date_time > .clock_section > #clock{ 
+	/* width:370px;  
+	padding:40px; 
+	margin:100px auto 60px;
+	position:relative; */
+    height: 100%;
+    flex: 1;
+    opacity: 0.9;
     
 }
+.container > .time_newsScrolling > .date_time > .clock_section > #clock > g > g > path{
+    color: blue !important;
+}
+
+.container > .time_newsScrolling > .date_time > .clock_section > p {
+    font-size: 42px;
+    padding-left: 5px;
+}
+
+/*clock section styling*/
 
 
 
