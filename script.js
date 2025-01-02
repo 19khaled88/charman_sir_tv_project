@@ -4,22 +4,24 @@
 
 
 // Set date and time on page load
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async() => {
+    
+
     google.charts.load('current', {packages: ['corechart', 'line']});
     google.charts.setOnLoadCallback(drawCurveTypes);
 
+    
+    
     updateDateTime();
     // setInterval(updateDateTime,6000);
-
+   
     scrollItems();
 
-   
+  
+
     stockMarketManagement();
 
-   
-    // manageCardInfo();
-
-
+    
 
     function drawCurveTypes() {
         var data = new google.visualization.DataTable();
@@ -109,7 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     
-  
+    // const news =await fetchNews();
+    // if(news !=undefined){
+    //     console.log(news)
+    // }
 });
 
 

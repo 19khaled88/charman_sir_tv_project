@@ -1,4 +1,5 @@
 
+let allNewsData = []
 
 function getFormattedDateTime() {
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -155,9 +156,11 @@ function scrollNewsHeadlines() {
     const newsContainer = document.getElementById("scrolling_text");
     const scrollingNewsContainer = document.getElementById("scrolling_news");
     let currentHeadlineIndex = 0;
-
+    
     function updateHeadline() {
         // Set the headline text
+
+        
         newsContainer.textContent = headlines[currentHeadlineIndex];
 
         // Reset animation
@@ -182,6 +185,7 @@ function scrollNewsHeadlines() {
     // Initialize and update the headline every 10 seconds (to sync with animation)
     updateHeadline();
     setInterval(updateHeadline, 10000);
+ 
 }
 
 
@@ -685,62 +689,6 @@ const stockMakrketData =[
       
 ]
 
-// function manageCardInfo(){
-//     const canvases = document.querySelectorAll('.lineChart');
-//     canvases.forEach((canvas)=>{
-//         fetchStockData().then(stockData =>{
-//             const ctx = canvas.getContext('2d'); 
-
-//             new Chart(ctx, {
-//                 type: 'line',
-//                 data: {
-//                     labels: stockData.labels,
-//                     datasets: [{
-//                         data: stockData.prices,
-//                         fill: false, // Ensure there's no area fill
-//                         borderColor: 'rgb(75, 192, 192)', // Line color
-                        
-//                         tension: 0.1
-//                     }]
-//                 },
-//                 options: {
-//                     responsive: true,
-//                     scales: {
-//                         y: {
-//                             beginAtZero: false,
-//                             title: {
-//                                 // display: true,
-//                                 text: 'Price (USD)' // Y-axis title
-//                             }
-//                         },
-//                         x: {
-//                             title: {
-//                                 // display: true,
-//                                 text: 'Date' // X-axis title
-//                             }
-//                         }
-//                     },
-//                     plugins: {
-//                         legend: {
-//                             // display: true,
-//                             position: 'top',
-//                         },
-//                         tooltip: {
-//                             mode: 'index',
-//                             intersect: false,
-//                         }
-//                     }
-//                 }
-//             });
-//         });
-
-       
-//     });
-
-// }
-
-
-
 async function fetchStockData() {
     // const response = await fetch('https://api.example.com/stock-data?symbol=YOUR_STOCK_SYMBOL&interval=daily'); // Replace with actual API URL
 
@@ -834,6 +782,28 @@ function scrolling(speedValue, scrollElement) {
 }
 
 
+
+
+// const apiUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://m.khasruopc.com/api/kdashboard/news');
+
+// async function fetchNews() {
+//   try {
+//     const response = await fetch(apiUrl);
+//     if (!response.ok) {
+//       throw new Error(`Network response was not ok, status: ${response.status}`);
+//     }
+//     const data = await response.json(); // Parse JSON data
+//     console.log(data.contents); // Access the actual data inside contents
+//   } catch (error) {
+//     console.error('Error fetching news:', error); // Handle errors
+//   }
+// }
+
+// fetchNews();
+
+
+
+
 const apiUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://m.khasruopc.com/api/kdashboard/news');
 
 async function fetchNews() {
@@ -848,14 +818,21 @@ async function fetchNews() {
     
     // Access the actual contents of the news
     const newsData = JSON.parse(data.contents); // Parse the contents string into JSON
-    console.log(newsData,newsData.data); // Log or process the actual news data
-    return newsData.data
+    console.log(newsData)
+    return newsData
   } catch (error) {
     console.error('Error fetching news:', error); // Handle errors
   }
 }
 
 fetchNews();
+
+
+
+
+  
+
+
 
 
 
