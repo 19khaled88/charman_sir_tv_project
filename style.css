@@ -9,8 +9,10 @@ body, h1, h2, h3, p {
 
 /* Set a background color and font for the body */
 body {
-    background-color: #181717;
+    background-color: #000000;
     font-family: Arial, sans-serif;
+
+
 }
 
 /* Style the container */
@@ -18,8 +20,10 @@ body {
     margin: auto;
     display: flex;
     flex-direction: column;
-    width: 99vw;
+    width: 98vw;
     height: 100vh;
+    
+    
 }
 .container > div {
     box-sizing: border-box;
@@ -34,9 +38,9 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 99vw;
+    width: 98vw;
     border-bottom: 1px dotted rgb(17, 135, 214) ;
-
+    padding-top: 10px;
 
     height: 100px !important;
 }
@@ -47,25 +51,25 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-
+    
     font-family: Arial, sans-serif;
     
 }
 .container > .time_newsScrolling > .date_time > .day_year{
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     width: 100%;
     flex: 1;
     font-size: 18px;
-    padding: 5px 0;
+    padding: 2px 0;
 
 }
-.container > .time_newsScrolling > .date_time > .day_year > span{
+.container > .time_newsScrolling > .date_time > .day_year > spans{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     
     padding: 3px 0;
@@ -75,40 +79,34 @@ body {
     flex: 1;
     /* width: 90%; */
 }
-.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(1){border-radius: 50px 0 0 50px;color: white;}
-.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(2){border-radius: 0 50px 50px 0;color: white;}
-.container > .time_newsScrolling > .date_time > .day_year > span > p:nth-child(2){
-    padding: 0 15px;
-    /* border-radius: 10px 0 0 10px; */
-    
+
+.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(1){
+    border-right: 3px solid white;
+    padding-right: 10px;
 }
-.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(1) > p:nth-child(1){
-    padding: 0 15px;
-}
-.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(1) > p:nth-child(2){
-    border-radius: 20px 0 0 20px;
-    height: 100%;
-    padding: 0 5px 0 15px;
-}
-.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(2) > p:nth-child(1){
-    border-radius: 0 20px 20px 0;
-    height: 100%;
-    padding: 0 15px 0 5px;
+.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(2) {
+    border-right: 3px solid white;
+    padding: 0 10px;
 }
 .container > .time_newsScrolling > .date_time > .day_year > span > p{
-    height: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    /* width: 90%; */
+    color: white;
 }
-.container > .time_newsScrolling > .date_time > .day_year > span > p:first-child{
-    /* margin-right: 5px; */
+.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(2){
+    display: flex;
+}
+.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(2) > p:nth-child(1){
+   padding-right: 5px;
+    
+}
+.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(2) > p:nth-child(2){
+    padding-left: 5px;
+}
+.container > .time_newsScrolling > .date_time > .day_year > span:nth-child(3){
+    display: flex;
+    justify-content: space-around;
     padding-left: 10px;
 }
+
 .container > .time_newsScrolling > .date_time > .time {
     display: flex;
     flex-direction: row;
@@ -228,7 +226,7 @@ body {
     font-weight: bold;
     z-index: 999;
 
-    height: 100px !important;
+    height: 90px !important;
 }
 .container > .time_newsScrolling  > .scrolling_news > .scrolling_text {
     display: flex;
@@ -243,23 +241,27 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: white;
+    /* background-color: white; */
     border-radius: 30px 20px;
     box-shadow: rgba(177, 170, 170, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+
     
 }
 .container > .time_newsScrolling  > .scrolling_news > .scrolling_text > .headline_item > p{
     margin-right: 5px;
     text-transform: uppercase;
     font-weight: bold;
-    color: white;
+    /* color: white; */
     font-size: 18px;
     border-radius: 30px 20px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .container > .time_newsScrolling  > .scrolling_news > .scrolling_text > .headline_item > span {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+    color: white;
+    font-size: 18px;
     
 }
 /* Style for scrolling news section */
@@ -274,7 +276,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 5px;
-
+    
     height: 140px !important;
     
 }
@@ -300,8 +302,8 @@ body {
 .stock_market_price_scolling > .dse_container > .indicator ,
 .stock_market_price_scolling > .cse_container > .indicator {
    
-    padding: 15px 15px;
-    margin-left: 5px;
+    padding: 15px 0 15px;
+    /* margin-left: 5px; */
     margin-right: 5px;
     border-radius: 10px;
     
@@ -462,10 +464,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border:1px solid gray;
-    background-color: white;
+    /* border:1px solid gray; */
     
+    background-color: #373636;
+   
 }
+
+
 .card_price > .stock_market > .card > .chart_div,
 .card_price > .mine_item_market > .card > .chart_div , 
 .card_price > .bit_coin_market > .card > .chart_div {
@@ -473,6 +478,7 @@ body {
     width: 90%;
     margin: auto;
     margin-bottom: 5px;
+    background-color: #373636 !important;
 }
 .card_price > .stock_market > .card > .chart_div > div > div > div > svg,
 .card_price > .mine_item_market > .card > .chart_div > div > div > div > svg , 
@@ -577,7 +583,9 @@ body {
 .mine_item_market > .card > div:nth-child(3)>div>div>div>svg, 
 .bit_coin_market > .card > div:nth-child(3)>div>div>div>svg{
     border-radius: 10px;
+    
 }
+
 /* Card price section styling */
 
 
@@ -591,8 +599,13 @@ body {
     text-align: right;
     background-color: rgb(17, 135, 214);
 
-
+    width: 100%;
     height: 50px !important;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 .container >.development > span {
     height: 100% !important;
@@ -615,7 +628,7 @@ body {
 
 /* clock section styling */
 .container > .time_newsScrolling > .date_time > .clock_section{
-    height: 65px;
+    height: 62px;
 
     display: flex;
     flex-direction: row;

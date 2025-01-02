@@ -32,10 +32,13 @@ function updateDateTime() {
         <div class="day_year" id="day_year">
             <span>
                 <p class="day" id="day">${formattedDateTime.day}</p>
-                <p class="date" id="date">${formattedDateTime.date}</p>
+                
             </span>
             <span>
-                <p class="month" id="month">${formattedDateTime.month}</p>
+            <p class="date" id="date">${formattedDateTime.date}</p>
+            <p class="month" id="month">${formattedDateTime.month}</p>
+            </span>
+            <span>
                 <p class="year" id="year">${formattedDateTime.year}</p>
             </span>
         </div>
@@ -214,7 +217,7 @@ function scrollItems (){
         const headlineText = document.createElement("span");
         headlineText.textContent = text;
         headlineText.className = "headline_text"; // Add a class for headline text styling
-
+        headlineText.style =`margin-left:5px;margin-right:5px;font-size:20px; border-right:4px solid white`
 
 
         const randomColor = colorize();
@@ -228,7 +231,7 @@ function scrollItems (){
         headlineText.style.paddingRight = '20px'
     
         // Append the category and headline text to the container
-        headlineContainer.appendChild(categoryTitle);
+        // headlineContainer.appendChild(categoryTitle);
         headlineContainer.appendChild(headlineText);
     
         // Append the container to the main scrolling div
@@ -408,8 +411,9 @@ function dateColorize(){
 function stockMarketManagement(){
     const stock_market_price_scolling = document.getElementById('stock_market_price_scolling')
     if(stock_market_price_scolling){
-        const dse_data = document.getElementById('dse_data')
-        const cse_data = document.getElementById('cse_data')
+        const dse_data = document.getElementById('dse_data');
+        const cse_data = document.getElementById('cse_data');
+        
 
         // Clear previous data
         dse_data.innerHTML = '';
@@ -678,59 +682,59 @@ const stockMakrketData =[
       
 ]
 
-function manageCardInfo(){
-    const canvases = document.querySelectorAll('.lineChart');
-    canvases.forEach((canvas)=>{
-        fetchStockData().then(stockData =>{
-            const ctx = canvas.getContext('2d'); 
+// function manageCardInfo(){
+//     const canvases = document.querySelectorAll('.lineChart');
+//     canvases.forEach((canvas)=>{
+//         fetchStockData().then(stockData =>{
+//             const ctx = canvas.getContext('2d'); 
 
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: stockData.labels,
-                    datasets: [{
-                        // label: 'Stock Price (USD)',
-                        data: stockData.prices,
-                        fill: false,
-                        borderColor: 'rgb(75, 192, 192)',
-                        tension: 0.1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: false,
-                            title: {
-                                // display: true,
-                                text: 'Price (USD)' // Y-axis title
-                            }
-                        },
-                        x: {
-                            title: {
-                                // display: true,
-                                text: 'Date' // X-axis title
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            // display: true,
-                            position: 'top',
-                        },
-                        tooltip: {
-                            mode: 'index',
-                            intersect: false,
-                        }
-                    }
-                }
-            });
-        });
+//             new Chart(ctx, {
+//                 type: 'line',
+//                 data: {
+//                     labels: stockData.labels,
+//                     datasets: [{
+//                         data: stockData.prices,
+//                         fill: false, // Ensure there's no area fill
+//                         borderColor: 'rgb(75, 192, 192)', // Line color
+                        
+//                         tension: 0.1
+//                     }]
+//                 },
+//                 options: {
+//                     responsive: true,
+//                     scales: {
+//                         y: {
+//                             beginAtZero: false,
+//                             title: {
+//                                 // display: true,
+//                                 text: 'Price (USD)' // Y-axis title
+//                             }
+//                         },
+//                         x: {
+//                             title: {
+//                                 // display: true,
+//                                 text: 'Date' // X-axis title
+//                             }
+//                         }
+//                     },
+//                     plugins: {
+//                         legend: {
+//                             // display: true,
+//                             position: 'top',
+//                         },
+//                         tooltip: {
+//                             mode: 'index',
+//                             intersect: false,
+//                         }
+//                     }
+//                 }
+//             });
+//         });
 
        
-    });
+//     });
 
-}
+// }
 
 
 
@@ -827,40 +831,5 @@ function scrolling(speedValue, scrollElement) {
 }
 
 
-// function drawCurveTypes() {
-//     var data = new google.visualization.DataTable();
-//     data.addColumn('number', 'X');
-//     data.addColumn('number', 'Dogs');
-//     data.addColumn('number', 'Cats');
 
-//     data.addRows([
-//       [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
-//       [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
-//       [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
-//       [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
-//       [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
-//       [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
-//       [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
-//       [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
-//       [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
-//       [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
-//       [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
-//       [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
-//     ]);
-
-//     var options = {
-//       hAxis: {
-//         title: 'Time'
-//       },
-//       vAxis: {
-//         title: 'Popularity'
-//       },
-//       series: {
-//         1: {curveType: 'function'}
-//       }
-//     };
-
-//     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-//     chart.draw(data, options);
-//   }
 
