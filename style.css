@@ -195,6 +195,8 @@ body {
     /* box-shadow: 1px 0 1px #222,  -4px 0 2px #FFFFFF; */
 
 }
+
+
 .container > .time_newsScrolling  > .scrolling_news {
     overflow: hidden;
     white-space: nowrap;
@@ -232,9 +234,19 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    
+
+
     font-size: 16px;
     position: absolute;
     z-index: 9;
+}
+.container > .time_newsScrolling  > .scrolling_news > .scrolling_text > .fixed_headline_item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .container > .time_newsScrolling  > .scrolling_news > .scrolling_text > .headline_item {
     position: absolute;

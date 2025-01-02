@@ -205,80 +205,107 @@ function scrollItems (news = null){
     newsContainer.innerHTML = "";
 
     if(news != null){
-        
         news.forEach((contents)=>{
             const head = Object.keys(contents)[1]; // e.g., Breaking, Sports, etc.
             const headline = contents[head]; 
-            console.log(headline)
+            
+
+            // Create a new container for the headline and category
+            const headlineContainer = document.createElement("div");
+            headlineContainer.className = "headline_item"; // Add a class for styling
+        
+            // Create a <p> element for the category
+            const categoryTitle = document.createElement("p");
+            categoryTitle.textContent = `${head}`;
+            categoryTitle.className = "category_title"; // Add a class for category styling
+        
+            // Create a <span> for the headline text
+            const headlineText = document.createElement("span");
+            headlineText.textContent = headline;
+            headlineText.className = "headline_text"; // Add a class for headline text styling
+            headlineText.style =`margin-left:5px;margin-right:5px;font-size:20px; border-right:4px solid white`
+
+
+            const randomColor = colorize();
+            headlineContainer.style.backgroundColor = randomColor.lighter;
+
+            categoryTitle.style.backgroundColor = randomColor.darker;
+
+        
+            categoryTitle.style.padding = '20px 10px'
+        
+            headlineText.style.paddingRight = '20px'
+        
+        
+            // headlineContainer.appendChild(categoryTitle);
+            headlineContainer.appendChild(headlineText);
+        
+            // Append the container to the main scrolling div
+            newsContainer.appendChild(headlineContainer);
         })
-    }
+
+
+
+
+        let time_news_scroll_height = 0;
+        document.querySelectorAll('.headline_item').forEach((headline)=>{
+            if(headline.offsetHeight > time_news_scroll_height){
+                time_news_scroll_height = headline.offsetHeight;
     
-   
-    headlines.forEach((headline) => {
-        const category = Object.keys(headline)[0]; // e.g., Breaking, Sports, etc.
-        const text = headline[category];
+            }
+        })
     
+        document.getElementById('time_newsScrolling').style.height = `${time_news_scroll_height + 20}px`;
+    
+        document.getElementById('scrolling_news').style.height = `${time_news_scroll_height + 20}px`;
+    
+        document.getElementById('news_text_label').style.height = `${time_news_scroll_height + 20}px`;
+    
+        document.querySelectorAll('.stock_market_price_scolling').forEach((element)=>{
+            const divElements = element.querySelectorAll('div');
+            divElements.forEach((div)=>{
+                const firstSpan = div.querySelector('span:first-child')
+                firstSpan.style.width = `${firstSpan.offsetHeight}px`
+            })
+        })
+    
+    
+        scrolling(1,'scrolling_text');
+
+    }else{
         // Create a new container for the headline and category
         const headlineContainer = document.createElement("div");
-        headlineContainer.className = "headline_item"; // Add a class for styling
+        headlineContainer.className = "fixed_headline_item"; // Add a class for styling
     
-        // Create a <p> element for the category
-        const categoryTitle = document.createElement("p");
-        categoryTitle.textContent = `${category}`;
-        categoryTitle.className = "category_title"; // Add a class for category styling
     
         // Create a <span> for the headline text
         const headlineText = document.createElement("span");
-        headlineText.textContent = text;
+        headlineText.textContent = 'Waiting for News';
         headlineText.className = "headline_text"; // Add a class for headline text styling
         headlineText.style =`margin-left:5px;margin-right:5px;font-size:20px; border-right:4px solid white`
 
+        const scrolling_text = document.getElementById('scrolling_text');
+        scrolling_text.style =`width:100%;justify-content: center;`
 
         const randomColor = colorize();
         headlineContainer.style.backgroundColor = randomColor.lighter;
-
-        categoryTitle.style.backgroundColor = randomColor.darker;
-
-       
-        categoryTitle.style.padding = '20px 10px'
+        headlineContainer.style.color = 'white'
+        
        
         headlineText.style.paddingRight = '20px'
     
      
-        // headlineContainer.appendChild(categoryTitle);
+      
         headlineContainer.appendChild(headlineText);
     
         // Append the container to the main scrolling div
-        newsContainer.appendChild(headlineContainer);
-
-        
-    });
+        newsContainer.appendChild(headlineContainer); 
+        headlineContainer.querySelector('span').style = 'border-right:none'
+    }
+    
 
     
-    let time_news_scroll_height = 0;
-    document.querySelectorAll('.headline_item').forEach((headline)=>{
-        if(headline.offsetHeight > time_news_scroll_height){
-            time_news_scroll_height = headline.offsetHeight;
-
-        }
-    })
-
-    document.getElementById('time_newsScrolling').style.height = `${time_news_scroll_height + 20}px`;
-
-    document.getElementById('scrolling_news').style.height = `${time_news_scroll_height + 20}px`;
-
-    document.getElementById('news_text_label').style.height = `${time_news_scroll_height + 20}px`;
-
-    document.querySelectorAll('.stock_market_price_scolling').forEach((element)=>{
-        const divElements = element.querySelectorAll('div');
-        divElements.forEach((div)=>{
-            const firstSpan = div.querySelector('span:first-child')
-            firstSpan.style.width = `${firstSpan.offsetHeight}px`
-        })
-    })
-
-
-    scrolling(1,'scrolling_text');
+   
    
 }
 
