@@ -16,7 +16,11 @@ document.addEventListener("DOMContentLoaded", async() => {
     // setInterval(updateDateTime,6000);
    
     scrollItems();
-
+    const news =await fetchNews();
+    if(news !=undefined && news.status === true){
+        
+       scrollItems(news.data);
+    }
   
 
     stockMarketManagement();
@@ -111,10 +115,7 @@ document.addEventListener("DOMContentLoaded", async() => {
     }
     
     
-    // const news =await fetchNews();
-    // if(news !=undefined){
-    //     console.log(news)
-    // }
+    
 });
 
 

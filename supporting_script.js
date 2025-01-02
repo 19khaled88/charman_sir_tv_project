@@ -143,53 +143,53 @@ function updateDateTime() {
 }
 
 
-function scrollNewsHeadlines() {
-    const headlines = [
-        "Breaking: Stock market hits an all-time high.",
-        "Sports: Local team wins the championship!",
-        "Weather: Expect sunny skies all week long.",
-        "Technology: New smartphone features unveiled.",
-        "Health: Tips for staying fit this winter season.",
-        "Travel: Top destinations for 2024 vacations."
-    ];
+// function scrollNewsHeadlines() {
+//     const headlines = [
+//         "Breaking: Stock market hits an all-time high.",
+//         "Sports: Local team wins the championship!",
+//         "Weather: Expect sunny skies all week long.",
+//         "Technology: New smartphone features unveiled.",
+//         "Health: Tips for staying fit this winter season.",
+//         "Travel: Top destinations for 2024 vacations."
+//     ];
 
-    const newsContainer = document.getElementById("scrolling_text");
-    const scrollingNewsContainer = document.getElementById("scrolling_news");
-    let currentHeadlineIndex = 0;
+//     const newsContainer = document.getElementById("scrolling_text");
+//     const scrollingNewsContainer = document.getElementById("scrolling_news");
+//     let currentHeadlineIndex = 0;
     
-    function updateHeadline() {
-        // Set the headline text
+//     function updateHeadline() {
+//         // Set the headline text
 
         
-        newsContainer.textContent = headlines[currentHeadlineIndex];
+//         newsContainer.textContent = headlines[currentHeadlineIndex];
 
-        // Reset animation
-        newsContainer.style.animation = "none";
+//         // Reset animation
+//         newsContainer.style.animation = "none";
 
-        // Wait for the DOM to update, then apply dynamic animation
-        requestAnimationFrame(() => {
-            const headlineWidth = newsContainer.offsetWidth; // Get the width of the headline
-            const containerWidth = scrollingNewsContainer.offsetWidth; // Get the container width
+//         // Wait for the DOM to update, then apply dynamic animation
+//         requestAnimationFrame(() => {
+//             const headlineWidth = newsContainer.offsetWidth; // Get the width of the headline
+//             const containerWidth = scrollingNewsContainer.offsetWidth; // Get the container width
 
-            // Calculate animation duration based on the width of the headline
-            const duration = (headlineWidth + containerWidth) / 100; // Adjust the speed factor here
+//             // Calculate animation duration based on the width of the headline
+//             const duration = (headlineWidth + containerWidth) / 100; // Adjust the speed factor here
 
-            // Set animation dynamically
-            newsContainer.style.animation = `scrollLeft ${duration}s linear infinite`;
-        });
+//             // Set animation dynamically
+//             newsContainer.style.animation = `scrollLeft ${duration}s linear infinite`;
+//         });
 
-        // Update the index for the next headline
-        currentHeadlineIndex = (currentHeadlineIndex + 1) % headlines.length;
-    }
+//         // Update the index for the next headline
+//         currentHeadlineIndex = (currentHeadlineIndex + 1) % headlines.length;
+//     }
 
-    // Initialize and update the headline every 10 seconds (to sync with animation)
-    updateHeadline();
-    setInterval(updateHeadline, 10000);
+//     // Initialize and update the headline every 10 seconds (to sync with animation)
+//     updateHeadline();
+//     setInterval(updateHeadline, 10000);
  
-}
+// }
 
 
-function scrollItems (){
+function scrollItems (news = null){
     const headlines = [
         {Breaking:'Stock market hits an all-time high.'},
         {Sports:'Local team wins the championship!'},
@@ -204,7 +204,16 @@ function scrollItems (){
     // Clear the existing content (if any)
     newsContainer.innerHTML = "";
 
-    // Loop through the array and create individual headline elements
+    if(news != null){
+        
+        news.forEach((contents)=>{
+            const head = Object.keys(contents)[1]; // e.g., Breaking, Sports, etc.
+            const headline = contents[head]; 
+            console.log(headline)
+        })
+    }
+    
+   
     headlines.forEach((headline) => {
         const category = Object.keys(headline)[0]; // e.g., Breaking, Sports, etc.
         const text = headline[category];
@@ -235,7 +244,7 @@ function scrollItems (){
        
         headlineText.style.paddingRight = '20px'
     
-        // Append the category and headline text to the container
+     
         // headlineContainer.appendChild(categoryTitle);
         headlineContainer.appendChild(headlineText);
     
@@ -818,14 +827,14 @@ async function fetchNews() {
     
     // Access the actual contents of the news
     const newsData = JSON.parse(data.contents); // Parse the contents string into JSON
-    console.log(newsData)
+  
     return newsData
   } catch (error) {
     console.error('Error fetching news:', error); // Handle errors
   }
 }
 
-fetchNews();
+
 
 
 
