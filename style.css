@@ -445,6 +445,10 @@ body {
 
     padding: 5px 20px;
 }
+.card_price >.stock_market, 
+.card_price >.mine_item_market{
+    margin-bottom: 10px;
+}
 .stock_market > .card > span:nth-child(1) {
     /* background-color: #fb00ff; */
 } 
@@ -480,6 +484,7 @@ body {
     margin-bottom: 5px;
     background-color: #373636 !important;
 }
+
 .card_price > .stock_market > .card > .chart_div > div > div > div > svg,
 .card_price > .mine_item_market > .card > .chart_div > div > div > div > svg , 
 .card_price > .bit_coin_market > .card > .chart_div > div > div > div > svg {
