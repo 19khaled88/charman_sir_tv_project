@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     updateDateTime();
-    setInterval(updateDateTime,6000);
+    // setInterval(updateDateTime,6000);
 
     scrollItems();
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // manageCardInfo();
 
 
-    
+
     function drawCurveTypes() {
         var data = new google.visualization.DataTable();
         data.addColumn('number', 'X'); // X-axis

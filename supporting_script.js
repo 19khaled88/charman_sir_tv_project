@@ -410,15 +410,6 @@ function dateColorize(){
 
 function stockMarketManagement(){
 
-    const apiUrl = 'https://m.khasruopc.com/api/kdashboard/news';
-
-    fetch(apiUrl, { mode: 'no-cors' })
-    .then((response) => {
-        console.log(response); // Response will be opaque and limited
-    })
-    .catch((error) => console.error(error));
-
-
 
     const stock_market_price_scolling = document.getElementById('stock_market_price_scolling')
     if(stock_market_price_scolling){

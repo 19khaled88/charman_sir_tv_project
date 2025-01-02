@@ -13,7 +13,7 @@
     <!-- Link to CSS file -->
     <link rel="stylesheet" href="style.css"> <!-- Replace 'styles.css' with your CSS file path -->
 
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    
 
@@ -295,7 +295,17 @@
         })()
 
 
+        const apiUrl = 'https://m.khasruopc.com/api/kdashboard/news';
 
+        fetch(apiUrl,{mode:"no-cors"})
+            .then((response) => {
+                // Success: Handle the response data
+                console.log(response);
+            })
+            .catch((error) => {
+                // Error: Handle the error
+                console.error('Error fetching data:', error);
+            })
     </script>
 </body>
 </html>
