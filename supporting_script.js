@@ -1,4 +1,5 @@
 
+
 function getFormattedDateTime() {
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const months = [
@@ -831,6 +832,33 @@ function scrolling(speedValue, scrollElement) {
         pause = false;
     });
 }
+
+
+const apiUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://m.khasruopc.com/api/kdashboard/news');
+
+async function fetchNews() {
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error(`Network response was not ok, status: ${response.status}`);
+    }
+    
+    // Parse JSON data
+    const data = await response.json();
+    
+    // Access the actual contents of the news
+    const newsData = JSON.parse(data.contents); // Parse the contents string into JSON
+    console.log(newsData,newsData.data); // Log or process the actual news data
+    return newsData.data
+  } catch (error) {
+    console.error('Error fetching news:', error); // Handle errors
+  }
+}
+
+fetchNews();
+
+
+
 
 
 

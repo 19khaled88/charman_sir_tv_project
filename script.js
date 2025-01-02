@@ -1,9 +1,12 @@
 
+
+
+
+
 // Set date and time on page load
 document.addEventListener("DOMContentLoaded", () => {
     google.charts.load('current', {packages: ['corechart', 'line']});
     google.charts.setOnLoadCallback(drawCurveTypes);
-
 
     updateDateTime();
     // setInterval(updateDateTime,6000);
@@ -97,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
            
             const rects = chartDiv.querySelectorAll('svg rect');
             rects.forEach((rect)=>{
-                rect.setAttribute('fill','none');
+                rect.setAttribute('fill','white');
             })
             
         });
@@ -105,8 +108,11 @@ document.addEventListener("DOMContentLoaded", () => {
         
     }
     
-
+    
+  
 });
+
+
 
 
 

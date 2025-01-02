@@ -471,6 +471,7 @@ body {
     /* border:1px solid gray; */
     
     background-color: #373636;
+    background-color: white;
    
 }
 
@@ -483,6 +484,7 @@ body {
     margin: auto;
     margin-bottom: 5px;
     background-color: #373636 !important;
+    background-color: white !important;
 }
 
 .card_price > .stock_market > .card > .chart_div > div > div > div > svg,
@@ -599,10 +601,12 @@ body {
     padding: 10px 10px 10px 0;
     color: white;
     margin-top: 10px;
-    border-top: 1px dotted blue;
+    border-top: 3px dotted blue;
     font-size: 20px;
     text-align: right;
     background-color: rgb(17, 135, 214);
+
+    background-color: #000000 !important;
 
     width: 100%;
     height: 50px !important;
