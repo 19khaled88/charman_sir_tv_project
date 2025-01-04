@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async() => {
     const news =await fetchNews();
     if(news !=undefined && news.status === true){
         
-       scrollItems(news.data);
+    //    scrollItems(news.data);
     }
   
 
