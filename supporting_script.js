@@ -189,7 +189,10 @@ function updateDateTime() {
 // }
 
 
-function scrollItems (news = null){
+async function scrollItems (){
+
+    let news = []
+
     const headlines = [
         {Breaking:'Stock market hits an all-time high.'},
         {Sports:'Local team wins the championship!'},
@@ -204,8 +207,34 @@ function scrollItems (news = null){
     // Clear the existing content (if any)
     newsContainer.innerHTML = "";
 
-    if(news != null){
-        console.log(news)
+    const apiUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://m.khasruopc.com/api/kdashboard/news');
+
+    async function fetchNews() {
+      try {
+        const response = await fetch(apiUrl);
+       
+        if (!response.ok) {
+          throw new Error(`Network response was not ok, status: ${response.status}`);
+        }
+        
+        // Parse JSON data
+        const data = await response.json();
+        
+        // Access the actual contents of the news
+        const newsData = JSON.parse(data.contents); // Parse the contents string into JSON
+      
+        // console.log(newsData)
+        // return newsData
+        news = newsData
+
+      } catch (error) {
+        news = [{atn:1111,head:'Wating long to fetch news',content:''}]
+      }
+    }
+
+    fetchNews()
+
+    if(news.length > 0){
         news.forEach((contents)=>{
             const head = Object.keys(contents)[1]; // e.g., Breaking, Sports, etc.
             const headline = contents[head]; 
@@ -842,26 +871,7 @@ function scrolling(speedValue, scrollElement) {
 
 
 
-const apiUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://m.khasruopc.com/api/kdashboard/news');
 
-async function fetchNews() {
-  try {
-    const response = await fetch(apiUrl);
-    if (!response.ok) {
-      throw new Error(`Network response was not ok, status: ${response.status}`);
-    }
-    
-    // Parse JSON data
-    const data = await response.json();
-    
-    // Access the actual contents of the news
-    const newsData = JSON.parse(data.contents); // Parse the contents string into JSON
-  
-    return newsData
-  } catch (error) {
-    console.error('Error fetching news:', error); // Handle errors
-  }
-}
 
 
 

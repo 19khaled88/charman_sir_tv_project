@@ -15,14 +15,9 @@ document.addEventListener("DOMContentLoaded", async() => {
     updateDateTime();
     // setInterval(updateDateTime,6000);
    
-    scrollItems();
-    const news =await fetchNews();
-    if(news !=undefined && news.status === true){
-        
-    //    scrollItems(news.data);
-    }
+    await scrollItems();
   
-
+  
     stockMarketManagement();
 
     
