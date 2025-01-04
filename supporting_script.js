@@ -205,6 +205,7 @@ function scrollItems (news = null){
     newsContainer.innerHTML = "";
 
     if(news != null){
+        console.log(news)
         news.forEach((contents)=>{
             const head = Object.keys(contents)[1]; // e.g., Breaking, Sports, etc.
             const headline = contents[head]; 
@@ -272,7 +273,8 @@ function scrollItems (news = null){
     
         scrolling(1,'scrolling_text');
 
-    }else{
+    }
+    else{
         // Create a new container for the headline and category
         const headlineContainer = document.createElement("div");
         headlineContainer.className = "fixed_headline_item"; // Add a class for styling
